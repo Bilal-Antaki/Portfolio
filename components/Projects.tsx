@@ -1,0 +1,33 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { projects } from '@/data/projects';
+import ProjectCard from './ProjectCard';
+
+export default function Projects() {
+  return (
+    <section id="projects" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold text-neutral-900 mb-4">Featured Projects</h2>
+          <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
+          <p className="text-neutral-600 max-w-2xl mx-auto">
+            I love to build autonuous systems, and I'm always working on something new! You can view some of my favorite projects below.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
