@@ -76,7 +76,7 @@ export default function Header() {
           {/* CV Download Button - Desktop */}
           <div className="hidden md:block ml-auto">
             <a
-              href="/cv/Bilal_Antaki_CV.pdf"
+              href="/Portfolio/cv/Bilal_Antaki_CV.pdf"
               download
               className="px-4 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-medium"
             >
@@ -109,7 +109,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="/cv/Bilal_Antaki_CV.pdf"
+                href="/Portfolio/cv/Bilal_Antaki_CV.pdf"
                 download
                 className="px-4 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-medium text-center"
               >
