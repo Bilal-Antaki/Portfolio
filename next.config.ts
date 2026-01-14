@@ -7,10 +7,6 @@ const nextConfig: NextConfig = {
   },
   basePath: '',
   trailingSlash: true,
-  devIndicators: {
-    buildActivity: false,
-    buildActivityPosition: 'bottom-right',
-  },
 };
 
 export default nextConfig;
