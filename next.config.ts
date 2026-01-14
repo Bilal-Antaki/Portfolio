@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
   basePath: '',
   trailingSlash: true,
   devIndicators: {
-    appIsrStatus: false,
     buildActivity: false,
     buildActivityPosition: 'bottom-right',
   },
