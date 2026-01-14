@@ -20,7 +20,7 @@ export const projects: Project[] = [
     fullDescription: 'Designed, simulated, and built a fully autonomous robotic cat inspired by the classic Tom and Jerry series. This project showcases advanced robotics integration including real-time control systems, autonomous navigation, and intelligent behavior planning.',
     technologies: ['ROS2', 'Jetson Nano', 'ESP32 RTOS', 'Computer Vision', 'SLAM', 'Navigation Stack', 'Behavior Trees', 'Python', 'C++'],
     category: 'Autonomous Robotics',
-    thumbnail: '/images/projects/robotic-cat-thumb.jpg',
+    thumbnail: '/images/projects/robotic-cat-thumb.png',
     vimeoUrl: '',
     achievements: [
       'Successfully integrated ROS2 on Jetson Nano for high-level decision making',

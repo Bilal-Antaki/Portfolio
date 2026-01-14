@@ -96,7 +96,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-base md:text-lg text-neutral-600 max-w-3xl mx-auto mb-8"
           >
-            Here, you can check out what I'm working on. I try my best to create things with <span className="text-red-500">❤</span>
+            Here, you can check out what I'm working on. I do my best to build things all the time!
           </motion.p>
 
           <motion.div
