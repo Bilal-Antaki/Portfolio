@@ -67,10 +67,10 @@ export default function Logo() {
 
       eyeElements.forEach((eye) => {
         if (eye instanceof SVGElement) {
-          // Random subtle movement for scanning effect - reduced movement
+          // Random movement for scanning effect - increased movement
           const randomDelay = Math.random() * 1500;
           const randomDuration = 200 + Math.random() * 300;
-          const randomDistance = (Math.random() * 0.6 - 0.3); // -0.3px to 0.3px (reduced from 0.75)
+          const randomDistance = (Math.random() * 2 - 1); // -1px to 1px (increased from 0.3)
 
           setTimeout(() => {
             eye.style.transition = `transform ${randomDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
@@ -96,10 +96,36 @@ export default function Logo() {
   };
 
   const handleLogoClick = () => {
-    setIsHappy(!isHappy);
+    const newHappyState = !isHappy;
+    setIsHappy(newHappyState);
 
-    // Add a subtle bounce effect on click
+    // Manually toggle eye visibility with direct opacity manipulation
     if (logoRef.current) {
+      // Get all eye elements
+      const normalEyesLeft = logoRef.current.querySelectorAll('#left-eye-normal, .left-eye-normal');
+      const normalEyesRight = logoRef.current.querySelectorAll('#right-eye-normal, .right-eye-normal');
+      const smileEyesLeft = logoRef.current.querySelectorAll('#left-eye-smile, .left-eye-smile');
+      const smileEyesRight = logoRef.current.querySelectorAll('#right-eye-smile, .right-eye-smile');
+
+      console.log('Toggle eyes - Happy state:', newHappyState);
+      console.log('Normal eyes found:', normalEyesLeft.length + normalEyesRight.length);
+      console.log('Smile eyes found:', smileEyesLeft.length + smileEyesRight.length);
+
+      if (newHappyState) {
+        // Happy state: hide normal, show smile
+        normalEyesLeft.forEach(eye => (eye as SVGElement).style.opacity = '0');
+        normalEyesRight.forEach(eye => (eye as SVGElement).style.opacity = '0');
+        smileEyesLeft.forEach(eye => (eye as SVGElement).style.opacity = '1');
+        smileEyesRight.forEach(eye => (eye as SVGElement).style.opacity = '1');
+      } else {
+        // Normal state: show normal, hide smile
+        normalEyesLeft.forEach(eye => (eye as SVGElement).style.opacity = '1');
+        normalEyesRight.forEach(eye => (eye as SVGElement).style.opacity = '1');
+        smileEyesLeft.forEach(eye => (eye as SVGElement).style.opacity = '0');
+        smileEyesRight.forEach(eye => (eye as SVGElement).style.opacity = '0');
+      }
+
+      // Add a subtle bounce effect on click
       logoRef.current.style.animation = 'none';
       setTimeout(() => {
         if (logoRef.current) {
