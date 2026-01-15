@@ -6,36 +6,45 @@ function cleanSVG(inputPath, outputPath) {
 
   let svg = fs.readFileSync(inputPath, 'utf8');
 
-  // Remove XML declaration and comments
+  // Remove XML declaration
   svg = svg.replace(/<\?xml[^>]*\?>/g, '');
+
+  // Remove comments
   svg = svg.replace(/<!--[\s\S]*?-->/g, '');
 
-  // Remove sodipodi and inkscape namespaces and elements
-  svg = svg.replace(/xmlns:sodipodi="[^"]*"/g, '');
-  svg = svg.replace(/xmlns:inkscape="[^"]*"/g, '');
-  svg = svg.replace(/sodipodi:[^=]*="[^"]*"/g, '');
-  svg = svg.replace(/inkscape:[^=]*="[^"]*"/g, '');
-  svg = svg.replace(/<sodipodi:namedview[\s\S]*?<\/sodipodi:namedview>/g, '');
-  svg = svg.replace(/<defs[\s\S]*?<\/defs>/g, '<defs/>');
+  // Remove sodipodi:namedview element completely
+  svg = svg.replace(/<sodipodi:namedview[\s\S]*?\/>/g, '');
+
+  // Remove defs content but keep empty defs
+  svg = svg.replace(/<defs[^>]*>[\s\S]*?<\/defs>/g, '<defs/>');
 
   // Remove metadata
   svg = svg.replace(/<metadata[\s\S]*?<\/metadata>/g, '');
 
-  // Clean up extra whitespace and newlines
+  // Remove all inkscape and sodipodi namespace declarations and attributes
+  svg = svg.replace(/xmlns:inkscape="[^"]*"\s*/g, '');
+  svg = svg.replace(/xmlns:sodipodi="[^"]*"\s*/g, '');
+  svg = svg.replace(/xmlns:xlink="[^"]*"\s*/g, '');
+  svg = svg.replace(/\s+inkscape:[a-z-]+="[^"]*"/gi, '');
+  svg = svg.replace(/\s+sodipodi:[a-z-]+="[^"]*"/gi, '');
+  svg = svg.replace(/\s+xml:space="[^"]*"/g, '');
+
+  // Clean up extra whitespace
   svg = svg.replace(/\s+/g, ' ');
   svg = svg.replace(/>\s+</g, '><');
   svg = svg.trim();
 
-  // Add back clean formatting for the opening SVG tag
-  svg = svg.replace(/<svg([^>]*)>/, function(match, attrs) {
-    // Extract only essential attributes
-    const viewBox = attrs.match(/viewBox="[^"]*"/)?.[0] || '';
-    const width = attrs.match(/width="[^"]*"/)?.[0] || '';
-    const height = attrs.match(/height="[^"]*"/)?.[0] || '';
-    const version = 'version="1.1"';
-    const xmlns = 'xmlns="http://www.w3.org/2000/svg"';
+  // Rebuild the SVG tag with only essential attributes
+  svg = svg.replace(/<svg[^>]*>/, function(match) {
+    const viewBoxMatch = match.match(/viewBox="([^"]*)"/);
+    const widthMatch = match.match(/width="([^"]*)"/);
+    const heightMatch = match.match(/height="([^"]*)"/);
 
-    return `<svg ${width} ${height} ${viewBox} ${version} ${xmlns}>`;
+    const viewBox = viewBoxMatch ? `viewBox="${viewBoxMatch[1]}"` : '';
+    const width = widthMatch ? `width="${widthMatch[1]}"` : '';
+    const height = heightMatch ? `height="${heightMatch[1]}"` : '';
+
+    return `<svg ${width} ${height} ${viewBox} version="1.1" xmlns="http://www.w3.org/2000/svg">`;
   });
 
   // Write cleaned SVG
