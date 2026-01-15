@@ -44,9 +44,9 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
           {/* Interactive EVE Logo */}
-          <Link href="/" className="flex items-center mr-12" aria-label="Home">
+          <div className="flex items-center mr-12">
             <Logo />
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 flex-1">

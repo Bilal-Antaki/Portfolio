@@ -20,7 +20,7 @@ export const projects: Project[] = [
     fullDescription: 'Designed, simulated, and built a fully autonomous robotic cat inspired by the classic Tom and Jerry series. This project showcases advanced robotics integration including real-time control systems, autonomous navigation, and intelligent behavior planning.',
     technologies: ['ROS2', 'Jetson Nano', 'ESP32 RTOS', 'Computer Vision', 'SLAM', 'Navigation Stack', 'Behavior Trees', 'Python', 'C++'],
     category: 'Autonomous Robotics',
-    thumbnail: '/images/projects/robotic-cat-thumb.png',
+    thumbnail: '/Portfolio/images/projects/robotic-cat-thumb.png',
     vimeoUrl: '',
     achievements: [
       'Successfully integrated ROS2 on Jetson Nano for high-level decision making',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     fullDescription: 'Led the development of a sophisticated avionics module for the TeknoFest 2025 CanSat Competition. Managed three engineering teams and designed a robust schematic integrating STM32F4 microcontroller with Raspberry Pi Zero for enhanced system stability and multi-spectral data acquisition.',
     technologies: ['STM32F4', 'Raspberry Pi Zero', 'KiCAD', 'STM32CubeIDE', 'Embedded C', 'Python', 'Sensor Fusion', 'PCB Design'],
     category: 'Embedded Systems & Avionics',
-    thumbnail: '/images/projects/cansat-thumb.jpg',
+    thumbnail: '/Portfolio/images/projects/cansat-thumb.jpg',
     vimeoUrl: '',
     achievements: [
       'Successfully managed 3 cross-functional engineering teams',
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     fullDescription: 'Designed and developed an unmanned aerial vehicle specifically for medical supply delivery in remote areas. Created a secondary flight controller with advanced Kalman filters and flight dynamics control, while optimizing the structural design to significantly reduce weight.',
     technologies: ['Flight Controller Design', 'Kalman Filters', 'Flight Dynamics', 'SolidWorks', 'Fusion360', 'Nylon 12', 'Glass Fiber', 'MATLAB', 'Simulink', 'C++'],
     category: 'UAV Design & Control',
-    thumbnail: '/images/projects/medical-uav-thumb.jpg',
+    thumbnail: '/Portfolio/images/projects/medical-uav-thumb.jpg',
     vimeoUrl: '',
     achievements: [
       'Designed custom secondary flight controller for enhanced stability',
