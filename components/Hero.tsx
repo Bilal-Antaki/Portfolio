@@ -1,13 +1,19 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { HiChevronDown } from 'react-icons/hi';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Hero() {
   const [isGhibliStyle, setIsGhibliStyle] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Preload Ghibli image
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = '/Portfolio/images/Sq_pfp_ghibli_optimized.png';
+  }, []);
 
   const scrollToAbout = () => {
     const element = document.querySelector('#about');
@@ -49,26 +55,39 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="relative w-64 h-64 rounded-full overflow-hidden cursor-pointer border-4 border-neutral-600 transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/30"
             >
-              <AnimatePresence initial={false}>
-                <motion.div
-                  key={isGhibliStyle ? 'ghibli' : 'normal'}
-                  initial={{ opacity: 0, filter: 'brightness(2) blur(14px)' }}
-                  animate={{ opacity: 1, filter: 'brightness(1) blur(0px)' }}
-                  exit={{ opacity: 0, filter: 'brightness(2) blur(14x)' }}
-                  transition={{ duration: 0.9, ease: [0.2, 0, 0.4, 1] }}
+              {/* Normal profile image */}
+              <motion.div
+                initial={{ opacity: 1 }}
+                animate={{ opacity: isGhibliStyle ? 0 : 1 }}
+                transition={{ duration: 0.5, ease: [0.2, 0, 0.4, 1] }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src="/Portfolio/images/Sq_pfp.jpeg"
+                  alt="Bilal Antaki - Profile Picture"
+                  fill
+                  sizes="256px"
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
 
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={isGhibliStyle ? '/Portfolio/images/Sq_pfp_ghibli_optimized.png' : '/Portfolio/images/Sq_pfp.jpeg'}
-                    alt="Bilal Antaki - Profile Picture"
-                    fill
-                    sizes="256px"
-                    className="object-cover"
-                    priority
-                  />
-                </motion.div>
-              </AnimatePresence>
+              {/* Ghibli style image */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isGhibliStyle ? 1 : 0 }}
+                transition={{ duration: 0.5, ease: [0.2, 0, 0.4, 1] }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src="/Portfolio/images/Sq_pfp_ghibli_optimized.png"
+                  alt="Bilal Antaki - Ghibli Style"
+                  fill
+                  sizes="256px"
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
 

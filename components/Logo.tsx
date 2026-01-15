@@ -41,10 +41,10 @@ export default function Logo() {
         });
     };
 
-    // Load both normal and smile SVGs (using optimized versions)
+    // Load both normal and smile SVGs
     Promise.all([
-      loadSvg('/Portfolio/images/Portfolio_Logo_Clean.svg'),
-      loadSvg('/Portfolio/images/Portfolio_Logo_Smile_Clean.svg')
+      loadSvg('/Portfolio/images/Portfolio_Logo_Optimized.svg'),
+      loadSvg('/Portfolio/images/Portfolio_Logo_Smile_Optimized.svg')
     ])
       .then(([normal, smile]) => {
         setNormalSvg(normal);
