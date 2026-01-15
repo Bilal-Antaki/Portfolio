@@ -45,7 +45,7 @@
 
 /* Hover Effect - 10% scale up with premium cubic-bezier */
 .logo-container:hover .eve-logo-svg {
-  transform: scale(1.1) translateY(-2px);
+  transform: scale(1.1);
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))
           drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
 }
@@ -164,7 +164,7 @@
   }
 
   .logo-container:hover .eve-logo-svg {
-    transform: scale(1.08) translateY(-1px);
+    transform: scale(1.08);
   }
 }
 
