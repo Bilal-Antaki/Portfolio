@@ -19,6 +19,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Performance optimization: use content-visibility for better rendering */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;

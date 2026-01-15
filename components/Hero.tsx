@@ -60,9 +60,10 @@ export default function Hero() {
                   className="absolute inset-0"
                 >
                   <Image
-                    src={isGhibliStyle ? '/Portfolio/images/Sq_pfp_ghibli.png' : '/Portfolio/images/Sq_pfp.jpeg'}
+                    src={isGhibliStyle ? '/Portfolio/images/Sq_pfp_ghibli_optimized.png' : '/Portfolio/images/Sq_pfp.jpeg'}
                     alt="Bilal Antaki - Profile Picture"
                     fill
+                    sizes="256px"
                     className="object-cover"
                     priority
                   />

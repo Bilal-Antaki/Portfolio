@@ -27,13 +27,17 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative h-96 rounded-lg overflow-hidden shadow-xl"
           >
+            <div className="flex items-center justify-center h-full bg-neutral-100">
+              <span className="text-neutral-400 text-lg">Profile Photo Coming Soon</span>
+            </div>
+            {/* When you have a profile photo, uncomment this:
             <Image
-              src="/Portfolio/images/Sq_pfp_ghibli.png"
+              src="/images/profile.jpg"
               alt="Bilal Antaki"
               fill
               className="object-cover"
-              priority
             />
+            */}
           </motion.div>
 
           {/* About Content */}

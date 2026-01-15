@@ -41,10 +41,10 @@ export default function Logo() {
         });
     };
 
-    // Load both normal and smile SVGs
+    // Load both normal and smile SVGs (using optimized versions)
     Promise.all([
-      loadSvg('/Portfolio/images/Portfolio_Logo_Optimized.svg'),
-      loadSvg('/Portfolio/images/Portfolio_Logo_Smile_Optimized.svg')
+      loadSvg('/Portfolio/images/Portfolio_Logo_Clean.svg'),
+      loadSvg('/Portfolio/images/Portfolio_Logo_Smile_Clean.svg')
     ])
       .then(([normal, smile]) => {
         setNormalSvg(normal);
@@ -70,7 +70,7 @@ export default function Logo() {
           // Random movement for scanning effect
           const randomDelay = Math.random() * 1500;
           const randomDuration = 200 + Math.random() * 300;
-          const randomDistance = (Math.random() * 2 - 1); // -1px to 1px
+          const randomDistance = (Math.random() * 3 - 1.5); // -1.5px to 1.5px (increased from -1 to 1)
 
           setTimeout(() => {
             eye.style.transition = `transform ${randomDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
@@ -102,21 +102,20 @@ export default function Logo() {
   return (
     <div
       ref={logoRef}
-      className="logo-container"
+      className={`logo-container ${isHappy ? 'happy-state' : ''}`}
       onClick={handleLogoClick}
       role="button"
       tabIndex={0}
-      onKeyPress={(e) => {
+      onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
           handleLogoClick();
         }
       }}
       aria-label="EVE Logo - Click to toggle happy state"
     >
-      <div
-        className="logo-svg-wrapper"
-        dangerouslySetInnerHTML={{ __html: isHappy ? smileSvg : normalSvg }}
-      />
+      <div className="logo-svg-wrapper logo-svg-normal" dangerouslySetInnerHTML={{ __html: normalSvg }} />
+      <div className="logo-svg-wrapper logo-svg-smile" dangerouslySetInnerHTML={{ __html: smileSvg }} />
     </div>
   );
 }
