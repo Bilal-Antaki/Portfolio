@@ -67,10 +67,10 @@ export default function Logo() {
 
       eyeElements.forEach((eye) => {
         if (eye instanceof SVGElement) {
-          // Random subtle movement for scanning effect
+          // Random subtle movement for scanning effect - reduced movement
           const randomDelay = Math.random() * 1500;
           const randomDuration = 200 + Math.random() * 300;
-          const randomDistance = (Math.random() * 1.5 - 0.75); // -0.75px to 0.75px
+          const randomDistance = (Math.random() * 0.6 - 0.3); // -0.3px to 0.3px (reduced from 0.75)
 
           setTimeout(() => {
             eye.style.transition = `transform ${randomDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
