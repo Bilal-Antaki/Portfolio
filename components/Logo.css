@@ -1,0 +1,212 @@
+/* ===========================
+   EVE Logo Interactive Styles
+   =========================== */
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* SVG Wrapper */
+.logo-svg-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main SVG Styles */
+.eve-logo-svg {
+  width: 120px;
+  height: auto;
+  transform-origin: center center;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12))
+          drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
+  animation: breathe 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Breathing Animation - Subtle vertical translation */
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Hover Effect - 10% scale up with premium cubic-bezier */
+.logo-container:hover .eve-logo-svg {
+  transform: scale(1.1) translateY(-2px);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))
+          drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Active/Click Effect */
+.logo-container:active .eve-logo-svg {
+  transform: scale(1.05);
+  transition: transform 0.1s ease;
+}
+
+/* Focus State for Accessibility */
+.logo-container:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.5);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.logo-container:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===========================
+   Eye States - Happy Toggle
+   =========================== */
+
+/* Normal Eyes - These selectors target common eye paths */
+.logo-container [id*="eye-normal"],
+.logo-container [id*="left-eye-normal"],
+.logo-container [id*="right-eye-normal"],
+.logo-container .eye-normal {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Smile Eyes - Hidden by default */
+.logo-container [id*="eye-smile"],
+.logo-container [id*="left-eye-smile"],
+.logo-container [id*="right-eye-smile"],
+.logo-container .eye-smile {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Happy State - Swap eye visibility */
+.logo-container.happy-state [id*="eye-normal"],
+.logo-container.happy-state [id*="left-eye-normal"],
+.logo-container.happy-state [id*="right-eye-normal"],
+.logo-container.happy-state .eye-normal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logo-container.happy-state [id*="eye-smile"],
+.logo-container.happy-state [id*="left-eye-smile"],
+.logo-container.happy-state [id*="right-eye-smile"],
+.logo-container.happy-state .eye-smile {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===========================
+   Eye Tracking Animation
+   =========================== */
+
+/* Subtle jitter animation for scanning effect */
+@keyframes eyeJitter {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.5px);
+  }
+  75% {
+    transform: translateX(0.5px);
+  }
+}
+
+/* Apply to eye elements */
+.logo-container [id*="eye"],
+.logo-container .eye,
+.logo-container path[fill="#000000"]:not([id*="face"]):not([id*="screen"]) {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* ===========================
+   Face and Screen Elements
+   =========================== */
+
+/* Ensure main elements have proper transform origin */
+.logo-container [id*="white-face"],
+.logo-container [id*="black-screen"],
+.logo-container .white-face,
+.logo-container .black-screen {
+  transform-origin: center center;
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+
+@media (max-width: 768px) {
+  .eve-logo-svg {
+    width: 100px;
+  }
+
+  @keyframes breathe {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .eve-logo-svg {
+    width: 80px;
+  }
+
+  .logo-container:hover .eve-logo-svg {
+    transform: scale(1.08) translateY(-2px);
+  }
+}
+
+/* ===========================
+   Reduced Motion Support
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .eve-logo-svg {
+    animation: none;
+  }
+
+  .logo-container:hover .eve-logo-svg {
+    transform: scale(1.05);
+  }
+
+  .logo-container [id*="eye"],
+  .logo-container .eye {
+    animation: none;
+    transform: none !important;
+  }
+}
+
+/* ===========================
+   Performance Optimizations
+   =========================== */
+
+.logo-container * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU acceleration hints */
+.eve-logo-svg,
+.logo-container [id*="eye"],
+.logo-container .eye {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

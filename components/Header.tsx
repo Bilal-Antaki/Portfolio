@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { HiMenu, HiX } from 'react-icons/hi';
+import Logo from './Logo';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,20 +43,9 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
-          {/* Logo - Replace with your logo image */}
-          <Link href="/" className="flex items-center mr-12">
-            {/* Uncomment and update the path below when you upload your logo */}
-            {/* <Image
-              src="/images/logo.png"
-              alt="Bilal Antaki Logo"
-              width={150}
-              height={40}
-              className="h-10 w-auto"
-            /> */}
-            {/* Remove the text below after adding your logo */}
-            <span className="text-xl font-bold text-primary hover:text-primary-dark transition-colors">
-              Bilal Antaki
-            </span>
+          {/* Interactive EVE Logo */}
+          <Link href="/" className="flex items-center mr-12" aria-label="Home">
+            <Logo />
           </Link>
 
           {/* Desktop Navigation */}
