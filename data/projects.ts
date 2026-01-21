@@ -85,6 +85,45 @@ export const projects: Project[] = [
       'Integrating secondary flight controller with primary autopilot system'
     ],
     images: []
+  },
+  {
+    id: 'project-placeholder-1',
+    title: 'Project Coming Soon',
+    shortDescription: 'An exciting new project is in development. Stay tuned for updates on this upcoming robotics endeavor.',
+    fullDescription: 'Details about this project will be added soon. Check back later for more information about this exciting new development.',
+    technologies: [],
+    category: 'Coming Soon',
+    thumbnail: '',
+    vimeoUrl: '',
+    achievements: [],
+    challenges: [],
+    images: []
+  },
+  {
+    id: 'project-placeholder-2',
+    title: 'Project Coming Soon',
+    shortDescription: 'An exciting new project is in development. Stay tuned for updates on this upcoming robotics endeavor.',
+    fullDescription: 'Details about this project will be added soon. Check back later for more information about this exciting new development.',
+    technologies: [],
+    category: 'Coming Soon',
+    thumbnail: '',
+    vimeoUrl: '',
+    achievements: [],
+    challenges: [],
+    images: []
+  },
+  {
+    id: 'project-placeholder-3',
+    title: 'Project Coming Soon',
+    shortDescription: 'An exciting new project is in development. Stay tuned for updates on this upcoming robotics endeavor.',
+    fullDescription: 'Details about this project will be added soon. Check back later for more information about this exciting new development.',
+    technologies: [],
+    category: 'Coming Soon',
+    thumbnail: '',
+    vimeoUrl: '',
+    achievements: [],
+    challenges: [],
+    images: []
   }
 ];
 

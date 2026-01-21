@@ -54,7 +54,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Robotics Engineer Subsection */}
+        {/* About Me Text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,11 +62,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-bold text-neutral-900 mb-6 text-center">
-            Path Planning and Control Robotics Engineer
-          </h3>
-
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
+          <div className="space-y-4 text-neutral-600 leading-relaxed text-justify">
             <p>
               I am a passionate robotics engineer with expertise in designing, simulating,
               developing, and deploying autonomous robotic systems. My work focuses on leveraging
@@ -84,17 +80,6 @@ export default function About() {
               and various embedded platforms. I am committed to continuous learning and staying at
               the forefront of robotics technology.
             </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 mt-8">
-            <div className="p-4 bg-neutral-50 rounded-lg">
-              <h4 className="font-semibold text-primary mb-1">Focus Areas</h4>
-              <p className="text-sm text-neutral-600">Autonomous Systems, SLAM, Navigation</p>
-            </div>
-            <div className="p-4 bg-neutral-50 rounded-lg">
-              <h4 className="font-semibold text-primary mb-1">Specialization</h4>
-              <p className="text-sm text-neutral-600">ROS2, C++, Python, Embedded Systems</p>
-            </div>
           </div>
         </motion.div>
       </div>
