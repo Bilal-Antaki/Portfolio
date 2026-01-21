@@ -87,42 +87,75 @@ export const projects: Project[] = [
     images: []
   },
   {
-    id: 'project-placeholder-1',
-    title: 'Project Coming Soon',
-    shortDescription: 'An exciting new project is in development. Stay tuned for updates on this upcoming robotics endeavor.',
-    fullDescription: 'Details about this project will be added soon. Check back later for more information about this exciting new development.',
-    technologies: [],
-    category: 'Coming Soon',
+    id: 'smart-greenhouse',
+    title: 'Smart Greenhouse Automation',
+    shortDescription: 'IoT-based greenhouse monitoring and control system with automated irrigation, climate control, and plant health monitoring.',
+    fullDescription: 'Developed a comprehensive smart greenhouse automation system that integrates multiple sensors for environmental monitoring and actuators for automated control. The system uses machine learning algorithms to optimize plant growth conditions and reduce water consumption while maximizing crop yield.',
+    technologies: ['Arduino', 'ESP32', 'MQTT', 'Node-RED', 'InfluxDB', 'Grafana', 'Python', 'TensorFlow Lite'],
+    category: 'IoT & Automation',
     thumbnail: '',
     vimeoUrl: '',
-    achievements: [],
-    challenges: [],
+    achievements: [
+      'Reduced water consumption by 40% through intelligent irrigation scheduling',
+      'Implemented real-time monitoring dashboard with historical data analysis',
+      'Developed ML model for plant disease detection using leaf imagery',
+      'Created automated climate control system maintaining optimal growing conditions',
+      'Integrated solar power system for energy-efficient operation'
+    ],
+    challenges: [
+      'Ensuring reliable wireless communication in humid greenhouse environment',
+      'Calibrating sensors for accurate readings across varying conditions',
+      'Optimizing ML model for edge deployment on resource-constrained devices',
+      'Designing waterproof enclosures for electronics in high-humidity environment'
+    ],
     images: []
   },
   {
-    id: 'project-placeholder-2',
-    title: 'Project Coming Soon',
-    shortDescription: 'An exciting new project is in development. Stay tuned for updates on this upcoming robotics endeavor.',
-    fullDescription: 'Details about this project will be added soon. Check back later for more information about this exciting new development.',
-    technologies: [],
-    category: 'Coming Soon',
+    id: 'robotic-arm',
+    title: '6-DOF Robotic Arm Controller',
+    shortDescription: 'Custom inverse kinematics solution for a 6-degree-of-freedom robotic arm with real-time trajectory planning and obstacle avoidance.',
+    fullDescription: 'Designed and implemented a complete control system for a 6-DOF robotic manipulator arm. The project includes custom inverse kinematics algorithms, real-time trajectory planning with obstacle avoidance, and a user-friendly interface for manual and automated operation modes.',
+    technologies: ['ROS', 'MoveIt', 'C++', 'Python', 'OpenCV', 'PCL', 'Gazebo', 'URDF', 'Arduino'],
+    category: 'Robotics & Control',
     thumbnail: '',
     vimeoUrl: '',
-    achievements: [],
-    challenges: [],
+    achievements: [
+      'Implemented analytical inverse kinematics solution with multiple configuration options',
+      'Developed smooth trajectory generation using quintic polynomial interpolation',
+      'Created point cloud-based obstacle avoidance using depth camera input',
+      'Achieved sub-millimeter repeatability in pick-and-place operations',
+      'Built intuitive GUI for waypoint teaching and playback'
+    ],
+    challenges: [
+      'Resolving singularities in the inverse kinematics solution',
+      'Minimizing latency in the real-time control loop',
+      'Calibrating joint encoders for accurate position feedback',
+      'Implementing collision detection without sacrificing performance'
+    ],
     images: []
   },
   {
-    id: 'project-placeholder-3',
-    title: 'Project Coming Soon',
-    shortDescription: 'An exciting new project is in development. Stay tuned for updates on this upcoming robotics endeavor.',
-    fullDescription: 'Details about this project will be added soon. Check back later for more information about this exciting new development.',
-    technologies: [],
-    category: 'Coming Soon',
+    id: 'swarm-robots',
+    title: 'Swarm Robotics Platform',
+    shortDescription: 'Multi-robot coordination system featuring distributed algorithms for formation control, task allocation, and collective behavior.',
+    fullDescription: 'Built a swarm robotics research platform consisting of multiple small mobile robots capable of coordinated behavior. The system implements various swarm intelligence algorithms including formation control, consensus-based decision making, and distributed task allocation for applications in search and rescue scenarios.',
+    technologies: ['ROS2', 'micro-ROS', 'ESP32', 'Python', 'C++', 'Docker', 'Kubernetes', 'ZeroMQ'],
+    category: 'Multi-Robot Systems',
     thumbnail: '',
     vimeoUrl: '',
-    achievements: [],
-    challenges: [],
+    achievements: [
+      'Developed scalable communication architecture supporting 20+ robots',
+      'Implemented Reynolds flocking algorithm for natural swarm movement',
+      'Created distributed consensus protocol for collective decision making',
+      'Built simulation environment for testing before hardware deployment',
+      'Achieved robust formation control with dynamic obstacle avoidance'
+    ],
+    challenges: [
+      'Managing wireless network congestion with multiple robots',
+      'Ensuring fault tolerance when individual robots fail',
+      'Synchronizing clocks across distributed system for coordinated actions',
+      'Balancing computational load between central server and edge robots'
+    ],
     images: []
   }
 ];

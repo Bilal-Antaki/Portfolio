@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+        className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer h-full flex flex-col"
       >
         {/* Project Image */}
         <div className="relative h-64 bg-neutral-100">
@@ -41,7 +41,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       {/* Project Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <div className="mb-2">
           <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full">
             {project.category}
@@ -52,12 +52,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <p className="text-neutral-600 mb-4 line-clamp-3">
+        <p className="text-neutral-600 mb-4 line-clamp-3 flex-grow">
           {project.shortDescription}
         </p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4 mt-auto">
           {project.technologies.slice(0, 4).map((tech, idx) => (
             <span
               key={idx}
