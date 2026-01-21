@@ -2,7 +2,7 @@
 
 ## What Was Built
 
-A complete, production-ready portfolio website for Bilal Antaki, Path Planning and Control Robotics Engineer.
+A complete, production-ready portfolio website for Bilal Antaki, Navigation and Control Robotics Engineer.
 
 ### ✅ Completed Features
 
