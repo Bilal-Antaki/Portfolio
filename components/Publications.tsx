@@ -81,22 +81,9 @@ export default function Publications() {
                       {pub.venue}
                     </p>
 
-                    {(pub.publicationMetrics?.journalImpactFactor || (pub.citationMetrics && pub.citationMetrics.citationCount > 0)) && (
+                    {pub.publicationMetrics?.journalImpactFactor && (
                       <p className="text-neutral-600 text-sm mb-3">
-                        {pub.publicationMetrics?.journalImpactFactor && (
-                          <span>IF: {pub.publicationMetrics.journalImpactFactor}</span>
-                        )}
-                        {pub.publicationMetrics?.journalImpactFactor && pub.citationMetrics && pub.citationMetrics.citationCount > 0 && (
-                          <span className="mx-2">•</span>
-                        )}
-                        {pub.citationMetrics && pub.citationMetrics.citationCount > 0 && (
-                          <span>
-                            {pub.citationMetrics.citationCount} Citations
-                            {pub.citationMetrics.influentialCitationCount !== undefined && pub.citationMetrics.influentialCitationCount > 0 && (
-                              <span className="text-emerald-600"> ({pub.citationMetrics.influentialCitationCount} influential)</span>
-                            )}
-                          </span>
-                        )}
+                        <span>IF: {pub.publicationMetrics.journalImpactFactor}</span>
                       </p>
                     )}
 
