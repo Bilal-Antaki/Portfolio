@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Left Section */}
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-2">Bilal Antaki</h3>
-            <p className="text-neutral-400">Software Robotics Engineer</p>
+            <p className="text-neutral-400">Path Planning and Control Robotics Engineer</p>
           </div>
 
           {/* Social Links */}

@@ -48,7 +48,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-bold text-neutral-900 mb-4">
-              Software Robotics Engineer
+              Path Planning and Control Robotics Engineer
             </h3>
             <p className="text-neutral-600 mb-4 leading-relaxed">
               I am a passionate robotics engineer with expertise in designing, simulating,

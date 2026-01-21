@@ -10,13 +10,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bilal Antaki | Software Robotics Engineer",
-  description: "Portfolio of Bilal Antaki - Software Robotics Engineer specializing in ROS2, autonomous systems, embedded systems, and UAV design.",
+  title: "Bilal Antaki | Path Planning and Control Robotics Engineer",
+  description: "Portfolio of Bilal Antaki - Path Planning and Control Robotics Engineer specializing in ROS2, autonomous systems, embedded systems, and UAV design.",
   keywords: ["Robotics", "ROS2", "Software Engineer", "Autonomous Systems", "Embedded Systems", "UAV", "SLAM", "Computer Vision"],
   authors: [{ name: "Bilal Antaki" }],
   openGraph: {
-    title: "Bilal Antaki | Software Robotics Engineer",
-    description: "Portfolio of Bilal Antaki - Software Robotics Engineer specializing in ROS2, autonomous systems, embedded systems, and UAV design.",
+    title: "Bilal Antaki | Path Planning and Control Robotics Engineer",
+    description: "Portfolio of Bilal Antaki - Path Planning and Control Robotics Engineer specializing in ROS2, autonomous systems, embedded systems, and UAV design.",
     type: "website",
   },
 };

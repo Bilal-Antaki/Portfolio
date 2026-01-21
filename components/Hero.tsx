@@ -107,7 +107,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-neutral-700 font-medium mb-6"
           >
-            Software Robotics Engineer
+            Path Planning and Control Robotics Engineer
           </motion.h2>
 
           <motion.p
