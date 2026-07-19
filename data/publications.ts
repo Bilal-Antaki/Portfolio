@@ -38,7 +38,7 @@ export const publications: Publication[] = [
     "citationMetrics": {
       "citationCount": 10,
       "influentialCitationCount": 0,
-      "lastUpdated": "2026-07-12",
+      "lastUpdated": "2026-07-19",
       "source": "semantic-scholar"
     },
     "publicationMetrics": {
